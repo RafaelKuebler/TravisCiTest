@@ -4,9 +4,12 @@ python:
   - "3.5"
   - "3.6"
   
-# command to install dependencies
+cache: pip
+
 install:
   - pip install -r requirements.txt
+
+script: skip
 
 jobs:
   - include:
@@ -14,6 +17,3 @@ jobs:
       script: python pytest.py
     - stage: Tests2
       script: python pytest2.py
-# command to run tests
-script:
-  - pytest
