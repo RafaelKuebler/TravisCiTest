@@ -4,19 +4,15 @@ jobs:
   include:
     - &tests
       stage: Tests
-      name: Python tests for 3.6
       python: 3.6
       install: pip install -r requirements.txt
-      script:
-        - python tests.py
+      script: python tests.py
     
     # Also test for some other versions
     - <<: *tests
-      name: Python test for 3.4
       python: 3.4
     - <<: *tests
-      name: Python test for 3.4
-      python: 2.4
+      python: 2.7
       
     - stage: Copy of tests
       name: Python test 3
