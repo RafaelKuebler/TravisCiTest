@@ -2,16 +2,16 @@ language: python
 
 jobs:
   include:
-    - <<: &tests
+    - &tests
       install: pip install -r requirements.txt
       script: python tests.py
       
-    -stage: Tests
+    - <<: *tests
+      stage: Tests
       name: Python test 1
-      <<: *tests
       python: 3.4
-    - name: Python test 2
-      <<: *tests
+    - <<: *tests
+      name: Python test 2
       python: 3.6
       
     - stage: Copy of tests
