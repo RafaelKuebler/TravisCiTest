@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+
+jobs:
+  - include:
+    - stage: Tests
+      script: python pytest.py
+    - stage: Tests2
+      script: python pytest2.py
+# command to run tests
+script:
+  - pytest
