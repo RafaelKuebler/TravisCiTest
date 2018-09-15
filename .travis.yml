@@ -2,11 +2,11 @@ language: python
 
 jobs:
   include:
-    - stage: Tests
-      python: 2.7
-      <<: &tests        # Anchor https://blog.daemonl.com/2016/02/yaml.html
-        install: pip install -r requirements.txt
-        script: python tests.py
+    - &tests        # Anchor https://blog.daemonl.com/2016/02/yaml.html
+      stage: Tests
+      python: 3.6
+      install: pip install -r requirements.txt
+      script: python tests.py
     
     # Also test for some other versions
     # <<: is the extend operator = add all fields and extend or modify them afterwards
@@ -14,7 +14,7 @@ jobs:
     - <<: *tests    # Alias for anchor defined above
       python: 3.4
     - <<: *tests
-      python: 3.6
+      python: 2.7
     
     # Just to see if experiments with anchors lead to same results
     - stage: Copy of tests
