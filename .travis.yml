@@ -11,8 +11,12 @@ jobs:
       script:
         - python tests.py
         - python tests.py
-    - stage: Copy of tests
       name: Python test 2
+      script:
+        - python tests.py
+        - python tests.py
+    - stage: Copy of tests
+      name: Python test 3
       install: pip install -r requirements.txt
       script:
         - python tests.py
