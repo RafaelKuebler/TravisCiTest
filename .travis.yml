@@ -1,19 +1,22 @@
 language: python
 
 jobs:
-  install: pip install -r requirements.txt
   include:
     - stage: Tests
       name: Python test 1
-      #install: pip install -r requirements.txt
+      python:
+        - 3.4
+        - 3.6
+      install: pip install -r requirements.txt
       script: python tests.py
     - name: Python test 2
-      #install: pip install -r requirements.txt
+      install: pip install -r requirements.txt
       script: python tests.py
       
     - stage: Copy of tests
+      name: Python test 3
       install: pip install -r requirements.txt
-    - name: Python test 3
       script: python tests.py
     - name: Python test 4
+      install: pip install -r requirements.txt
       script: python tests.py
