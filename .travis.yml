@@ -9,10 +9,8 @@ cache: pip
 install:
   - pip install -r requirements.txt
 
-script: skip
-
 jobs:
-  - include:
+  include:
     - stage: Tests
       script: python pytest.py
     - stage: Tests2
