@@ -9,4 +9,3 @@ install:
 
 script:
   - python tests.py
-  - python tests2.py
