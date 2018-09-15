@@ -2,10 +2,9 @@ language: python
 python:
   - "3.6"
   
-cache: pip
-
-install:
-  - pip install -r requirements.txt
-
-script:
-  - python tests.py
+jobs:
+  include:
+    - name: Default Tests
+      stage: test
+      install: pip install -r requirements.txt
+      script: python tests.py
