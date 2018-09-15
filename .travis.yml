@@ -7,13 +7,13 @@ jobs:
       python:
         - "3.4"
         - "3.6"
+        
       name: Python test 1
       script: python tests.py
+      
       name: Python test 2
       script: python tests.py
-      script:
-        - python tests.py
-        - python tests.py
+      
     - stage: Copy of tests
       python:
         - "3.4"
